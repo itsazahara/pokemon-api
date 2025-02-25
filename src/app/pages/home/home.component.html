@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h1 class="text-center"> Lista de pokémon </h1>
+
+  <div class="mb-3 text-center">
+    <input type="text" class="form-control w-50 mx-auto" placeholder="Buscar pokémon..." [(ngModel)]="searchTerm"
+      (input)="filterPokemons()" />
+  </div>
+
+  <div class="row">
+    <div *ngFor="let pokemon of filteredPokemons; let i = index" class="col-md-3 mb-3">
+      <div class="card text-center">
+        <img
+          [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + (i + 1 + offset) + '.png'"
+          class="card-img-top" alt="{{ pokemon.name }}">
+        <div class="card-body">
+          <h5 class="card-title text-capitalize">{{ pokemon.name }}</h5>
+          <a [routerLink]="['/pokemon-detail', pokemon.name]" class="btn btn-primary"> Ver detalles </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between mt-4">
+    <button (click)="prevPage()" class="btn btn-secondary" [disabled]="offset === 0"> Anterior </button>
+    <button (click)="nextPage()" class="btn btn-primary"> Siguiente</button>
+  </div>
+  <br>
+</div>

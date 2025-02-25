@@ -1,0 +1,29 @@
+<div class="container mt-4" *ngIf="pokemon">
+  <h1 class="text-center text-capitalize">{{ pokemon.name }}</h1>
+
+  <div class="text-center">
+    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" class="fotoDetalle">
+  </div>
+
+  <div class="mt-3">
+    <h3> Información </h3>
+    <p><strong> Altura: </strong> {{ pokemon.height / 10}} cm </p>
+    <p><strong> Peso: </strong> {{ pokemon.weight / 10 }} kg </p>
+    <p><strong> Tipo: </strong></p>
+    <ul>
+      <li *ngFor="let type of pokemon.types" [style.background]="getTypeColor(type.type.name)">
+        {{ type.type.name }}
+      </li>
+    </ul>
+    <p><strong> Habilidades: </strong></p>
+    <ul>
+      <li *ngFor="let ability of pokemon.abilities" [style.background]="getAbilityColor(ability.ability.name)">
+        {{ ability.ability.name }}
+      </li>
+    </ul>
+  </div>
+
+
+
+  <a routerLink="/" class="btn btn-secondary mt-3"> Volver a la pokedex </a>
+</div>
