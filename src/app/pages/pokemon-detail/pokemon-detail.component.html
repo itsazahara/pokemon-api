@@ -2,7 +2,13 @@
   <h1 class="text-center text-capitalize">{{ pokemon.name }}</h1>
 
   <div class="text-center">
-    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" class="fotoDetalle">
+    <img
+    [src]="pokemonImage"
+    (mouseover)="changeToGif()"
+    (mouseleave)="changeToStatic()"
+    alt="{{ pokemon?.name }}"
+    class="fotoDetalle"
+  />
   </div>
 
   <div class="mt-3">
@@ -23,7 +29,5 @@
     </ul>
   </div>
 
-
-
-  <a routerLink="/" class="btn btn-secondary mt-3"> Volver a la pokedex </a>
+  <a href="/home" class="btn btn-secondary mt-3"> Volver a la pokedex </a>
 </div>

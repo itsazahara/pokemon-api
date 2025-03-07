@@ -13,8 +13,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   pokemons: any[] = [];
-  filteredPokemons: any[] = []; // 🔹 Lista filtrada para la búsqueda
-  searchTerm: string = ''; // 🔹 Variable para almacenar el término de búsqueda
+  filteredPokemons: any[] = []; // Lista filtrada para la búsqueda
+  searchTerm: string = ''; // Variable para almacenar el término de búsqueda
   offset = 0;
   limit = 20;
 
@@ -27,11 +27,11 @@ export class HomeComponent implements OnInit {
   getPokemons(): void {
     this.pokemonService.getPokemons(this.limit, this.offset).subscribe((data) => {
       this.pokemons = data.results;
-      this.filteredPokemons = this.pokemons; // 🔹 Inicializar la lista filtrada
+      this.filteredPokemons = this.pokemons; // Inicializar la lista filtrada
     });
   }
 
-  // 🔍 Filtrar Pokémon en tiempo real
+  // Filtrar Pokémon en tiempo real
   filterPokemons(): void {
     this.filteredPokemons = this.pokemons.filter(pokemon =>
       pokemon.name.toLowerCase().includes(this.searchTerm.toLowerCase())

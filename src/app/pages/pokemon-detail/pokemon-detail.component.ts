@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PokemonDetailComponent implements OnInit {
   pokemon: any;
-  species: any;
+  pokemonImage: string = '';  // Añadido para almacenar la imagen actual
 
   constructor(
     private route: ActivatedRoute,
@@ -24,21 +24,36 @@ export class PokemonDetailComponent implements OnInit {
     if (name) {
       this.pokemonService.getPokemonDetails(name).subscribe((data) => {
         this.pokemon = data;
+        // Aquí usamos la URL de la imagen oficial como la imagen estática predeterminada
+        this.pokemonImage = this.pokemon.sprites.other['official-artwork'].front_default;
       });
     }
+  }
+
+  // Cambia a GIF cuando el ratón pasa por encima
+  changeToGif(): void {
+    const gifUrl = this.pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default;
+    if (gifUrl) {
+      this.pokemonImage = gifUrl; // Actualiza la imagen al GIF
+    }
+  }
+
+  // Vuelve a la imagen estática cuando el ratón sale
+  changeToStatic(): void {
+    this.pokemonImage = this.pokemon.sprites.other['official-artwork'].front_default; // Vuelve a la imagen estática
   }
 
   // Función para asignar un color aleatorio a cada tipo
   getTypeColor(typeName: string): string {
     const colors = ["#ff5733", "#33ff57", "#3357ff", "#ff33a1", "#ff8c33", "#33fff6"];
-    const index = typeName.length % colors.length; // Basado en la longitud del nombre
+    const index = typeName.length % colors.length;
     return colors[index];
   }
 
   // Función para asignar un color aleatorio a cada habilidad
   getAbilityColor(abilityName: string): string {
     const colors = ["#ff5733", "#33ff57", "#3357ff", "#ff33a1", "#ff8c33", "#33fff6"];
-    const index = abilityName.length % colors.length; // Basado en la longitud del nombre
+    const index = abilityName.length % colors.length;
     return colors[index];
   }
 }

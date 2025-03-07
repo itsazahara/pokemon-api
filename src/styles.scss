@@ -36,7 +36,9 @@ body {
 header {
     display: flex;
     align-items: center;
-    background: red;
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/232/230/447/1920x1080-px-bit-pixel-art-pokemon-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     text-align: center;
     padding: 15px 0;
@@ -57,6 +59,7 @@ h1 {
 
 .titulo {
     margin-left: 40px;
+    margin-right: 125px;
     text-decoration: underline;
 }
 
@@ -69,12 +72,14 @@ nav {
 nav a {
     text-decoration: none;
     font-weight: bold;
-    color: black;
+    color: white;
     transition: color 0.3s;
+
 }
 
 nav a:hover {
     color: gold;
+    text-decoration: underline;
 }
 
 /* Footer (Pie de página) */
@@ -122,9 +127,14 @@ footer {
 /* Detalle del Pokémon */
 
 .fotoDetalle {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
+    transition: transform 0.2s ease-in-out;
 }
+
+.fotoDetalle:hover {
+    transform: scale(1.1);
+  }
 
 .mt-3 {
     background: white;
@@ -152,4 +162,11 @@ ul {
 li {
     border-radius: 8px;
     margin: 5px;
+}
+
+.card-img, .card-img-top {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHFArC815b-hEgxMQ0UvFxVBzkg9fw88ihIg&s');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
