@@ -1,59 +1,66 @@
-# PokemonApi
+# Pokémon API con Angular  🎮🔥
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+![Pokémon Banner](https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png)
 
-## Development server
+## 📌 Descripción
 
-To start a local development server, run:
+Esta es una aplicación creada con **Angular** que consume la **Pokémon API**. Te permite explorar una lista de Pokémon, ver los detalles más destacados de cada uno de los pokemons y disfrutar de una interfaz dinámica y atractiva. Ideal para practicar **peticiones HTTP, componentes dinámicos y animaciones** en Angular. 🚀
 
-```bash
-ng serve
-```
+## 🎥 Demo
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+![Demo](https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif)
 
-## Code scaffolding
+## ✨ Características
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- 📜 Lista de Pokémon con imágenes y nombres.
+- 🔍 Búsqueda de Pokémon por nombre.
+- 📊 Visualización de peso, altura, tipo y habilidades.
+- 🌙 **Modo oscuro / claro**.
 
-```bash
-ng generate component component-name
-```
+## 🛠 Tecnologías utilizadas
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- [Angular](https://angular.io/)
+- [PokéAPI](https://pokeapi.co/)
+- TypeScript
+- HTML & SCSS
 
-```bash
-ng generate --help
-```
+## 🚀 Instalación y ejecución
 
-## Building
+1. Clona este repositorio:
+   ```sh
+   git clone https://github.com/itsazahara/pokemon-api.git
+   ```
+2. Entra en la carpeta del proyecto:
+   ```sh
+   cd pokemon-api
+   ```
+3. Instala las dependencias:
+   ```sh
+   npm install
+   ```
+4. Ejecuta el servidor de desarrollo:
+   ```sh
+   ng serve
+   ```
+5. Abre en tu navegador:
+   ```
+   http://localhost:4200/
+   ```
 
-To build the project run:
+## 📸 Capturas de pantalla
 
-```bash
-ng build
-```
+| 📱 Vista principal | 🔍 Búsqueda |
+|--------------------|------------|
+| ![Home](screenshots/home.png) | ![Search](screenshots/search.png) |
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🤝 Contribuciones
 
-## Running unit tests
+¡Las contribuciones son bienvenidas! Si quieres mejorar la aplicación, sigue estos pasos:
+1. **Fork** el repositorio 🍴
+2. Crea una nueva rama: `git checkout -b mi-nueva-feature` 🔄
+3. Realiza tus cambios y haz commit: `git commit -m "Añadí una nueva feature"` 📝
+4. Haz push a la rama: `git push origin mi-nueva-feature` 🚀
+5. Abre un **Pull Request** 📩
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+_Hecho con ❤️ por [Azahara](https://github.com/itsazahara)_
